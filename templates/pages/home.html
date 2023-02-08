@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <title>Title</title>
     {% include 'includes/meta.html' %}
+    
 </head>
 
 <body>
@@ -833,10 +834,12 @@
 
                 <!-- Footer Map -->
                 <div class='fullwidth_element_parent margin-top-30 padding-bottom-40'>
-                    <div id='google-map-listing' class='fullwidth_element' data-longitude='-79.38' data-latitude='43.65'
-                         data-zoom='12' style='height: 390px;' data-scroll='false'
-                         data-style='[{"featureType":"landscape","elementType":"labels","stylers":[{"visibility":"off"}]},{"featureType":"transit","elementType":"labels","stylers":[{"visibility":"off"}]},{"featureType":"poi","elementType":"labels","stylers":[{"visibility":"off"}]},{"featureType":"water","elementType":"labels","stylers":[{"visibility":"off"}]},{"featureType":"road","elementType":"labels.icon","stylers":[{"visibility":"off"}]},{"stylers":[{"hue":"#F0F0F0"},{"saturation":-100},{"gamma":2.15},{"lightness":12}]},{"featureType":"road","elementType":"labels.text.fill","stylers":[{"visibility":"on"},{"lightness":24}]},{"featureType":"road","elementType":"geometry","stylers":[{"lightness":57}]}]'></div>
+                    <div class="mapouter"><div class="gmap_canvas"><iframe width="100%" height="600px" id="gmap_canvas" src="https://maps.google.com/maps?q=株式会社 PK INTERNATIONAL&t=&z=10&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe><a href="https://2yu.co">2yu</a><br><style>.mapouter{position:relative;text-align:right;height:390px;width:100%;}</style><a href="https://embedgooglemap.2yu.co"></a><style>.gmap_canvas {overflow:hidden;background:none!important;height:390px;width:100%;}</style></div></div>
                 </div>
+
+               
+
+
                 <div class="car-rate-block row clearfix margin-top-30 padding-bottom-40">
                     <div class="col-lg-2 col-md-6 col-sm-6 col-xs-12 xs-margin-bottom-40 sm-margin-bottom-none padding-left-none scroll_effect bounceInLeft">
                         <div class="small-block clearfix">
@@ -977,7 +980,17 @@
                                         $<span class="number">750,000</span>
                                     </span>
 
-                                    Amount Sold
+                                    Cars Bought
+                                </div>
+
+                                <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12 padding-right-none margin-vertical-60">
+                                    <i class="fa fa-truck"></i>
+
+                                    <span class="animate_number margin-vertical-15">
+                                        <span class="number">3,600</span>
+                                    </span>
+
+                                    Truck and Machinery 
                                 </div>
 
                                 <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12 margin-vertical-60">
@@ -990,15 +1003,7 @@
                                     Customer Satisfaction
                                 </div>
 
-                                <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12 padding-right-none margin-vertical-60">
-                                    <i class="fa fa-tint"></i>
-
-                                    <span class="animate_number margin-vertical-15">
-                                        <span class="number">3,600</span>
-                                    </span>
-
-                                    Oil Changes
-                                </div>
+                             
 
                             </div>
                         </div>
@@ -1009,53 +1014,6 @@
     </div>
 </section>
 
-<footer class="design_2">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 padding-left-none md-padding-left-none sm-padding-left-15 xs-padding-left-15">
-                <h4>newsletter</h4>
-                <p>By subscribing to our company newsletter
-                    you will always be up-to-date on our latest
-                    promotions, deals and vehicle inventory!</p>
-                <form method="post" action="#" class="form_contact">
-                    <input type="text" value="" name="MERGE0" placeholder="Email Address">
-                    <input type="submit" value="Subscribe" class="md-button">
-                    <input type="hidden" name="u" value="">
-                    <input type="hidden" name="id" value="">
-                </form>
-                </div>
-            <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">
-                <h4>Latest tweets</h4>
-                <div class="latest-tweet">
-                    <div><i class="fa fa-twitter"></i>
-                        <p>Put your tweet message here.  Make it
-                            compelling to attract other <a href="#">@people</a> to
-                            read and click on your <a href="#">http://links</a> to
-                            your site. <a href="#">#hashtag</a></p>
-                    </div>
-                    <div><i class="fa fa-twitter"></i>
-                        <p>Put your tweet message here.  Make it
-                            compelling to attract other <a href="#">@people</a> to
-                            read and click on your <a href="#">http://links</a> to
-                            your site. <a href="#">#hashtag</a></p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 padding-right-none md-padding-right-none sm-padding-right-15 xs-padding-right-15">
-                <h4>Contact us</h4>
-                <div class="footer-contact">
-                    <ul>
-                        <li><i class="fa fa-map-marker"></i> <strong>Address:</strong> 1234 Street Name, City Name, AB 12345</li>
-                        <li><i class="fa fa-phone"></i> <strong>Phone:</strong>1-800-123-4567</li>
-                        <li><i class="fa fa-envelope-o"></i> <strong>Email:</strong><a href="#">sales@company.com</a></li>
-                    </ul>
-
-                    <i class="fa fa-location-arrow back_icon"></i>
-                </div>
-            </div>
-        </div>
-    </div>
-</footer>
 
 {% include 'includes/footer.html' %}
 

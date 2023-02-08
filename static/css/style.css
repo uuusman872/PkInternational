@@ -149,7 +149,7 @@ strong {
 
 img, iframe {
 	max-width: 100%;
-	height: auto;
+
 }
 
 .success {
@@ -812,7 +812,7 @@ header.affix-top .bottom-header .navbar-default .navbar-brand .logo .primary_tex
 header .bottom-header .navbar-default .navbar-brand .logo .primary_text {
 	font-family: 'Yellowtail', cursive;
 	color: #FFF;
-	font-size: 40px;
+	font-size: 18px;
 	display: block;
 	margin-bottom: 10px;
 	text-align: center;
@@ -826,20 +826,20 @@ header .bottom-header .navbar-default .navbar-brand .logo .secondary_text {
 	font-family: 'Open Sans', sans-serif;
 	font-size: 12px;
 	display: block;
-	text-align: center;
-	letter-spacing: 9px;
+	text-align: right;
+	/* letter-spacing: 9px; */
 	text-transform: uppercase;
 	transition-duration: 0s;
 }
 
 header.affix .bottom-header .navbar-default .navbar-brand .logo .primary_text {
-	font-size: 34px;
+	
 	margin-bottom: 0;
 	margin-top: 5px;
 }
 
 header.affix .bottom-header .navbar-default .navbar-brand .logo .secondary_text {
-	font-size: 8px;
+	/* font-size: 8px; */
 }
 .toolbar input.search_box::-webkit-input-placeholder {
  transition: color 0.5s linear;
@@ -7360,4 +7360,12 @@ section.content, .car-block-wrap, .welcome-wrap {
     text-transform: uppercase;
     font-weight: bold;
     z-index: 15;
+}
+
+/* custom css by mubashar */
+
+.parent-div-logo{
+	display: flex;
+    justify-content: center;
+    align-items: center;
 }
