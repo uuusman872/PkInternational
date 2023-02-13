@@ -16,6 +16,14 @@ def contact(request):
     return render(request, "pages/contact.html")
 
 
+def login(request):
+    return render(request, "pages/login.html")
+
+
+def register(request):
+    return render(request, "pages/register.html")
+
+
 def translate(language):
     cur_language = get_language()
     try:
