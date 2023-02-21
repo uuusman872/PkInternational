@@ -23,6 +23,9 @@ def login(request):
 def register(request):
     return render(request, "pages/register.html")
 
+def search(request):
+    return render(request, "pages/search.html")
+
 
 def translate(language):
     cur_language = get_language()
