@@ -204,12 +204,15 @@
                             <h3 class="margin-bottom-25 margin-top-none">CONTACT FORM</h3>
                             <div class="form_contact margin-bottom-20">
                                 <div id="result"></div>
-                                <fieldset id="contact_form">
-                                    <input type="text" name="name" class="form-control margin-bottom-25" placeholder="Name  (Required)" />
-                                    <input type="email" name="email" class="form-control margin-bottom-25" placeholder="Email  (Required)" />
-                                    <textarea name="msg" class="form-control margin-bottom-25 contact_textarea" placeholder="Your message" rows="7"></textarea>
-                                    <input id="submit_btn" type="submit" value="Send Message">
-                                </fieldset>
+                                <form method="POST" action="">
+                                    {% csrf_token %}
+                                    <fieldset id="contact_form">
+                                        <input type="text" name="name" class="form-control margin-bottom-25" placeholder="Name  (Required)" />
+                                        <input type="email" name="email" class="form-control margin-bottom-25" placeholder="Email  (Required)" />
+                                        <textarea name="msg" class="form-control margin-bottom-25 contact_textarea" placeholder="Your message" rows="7"></textarea>
+                                        <input id="submit_btn" type="submit" value="Send Message">
+                                    </fieldset>
+                                </form>
                             </div>
                         </div>
                     </div>
@@ -277,8 +280,9 @@
                 <p>By subscribing to our company newsletter
                     you will always be up-to-date on our latest
                     promotions, deals and vehicle inventory!</p>
-                <form method="post" action="#" class="form_contact">
-                    <input type="text" value="" name="MERGE0" placeholder="Email Address">
+                <form method="POST" action="#" class="form_contact">
+                    {% csrf_token %}
+                    <input type="text" name="email" placeholder="Email Address">
                     <input type="submit" value="Subscribe" class="md-button">
                     <input type="hidden" name="u" value="">
                     <input type="hidden" name="id" value="">

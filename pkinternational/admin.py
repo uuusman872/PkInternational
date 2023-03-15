@@ -1,6 +1,7 @@
 from django.contrib import admin
 from .models import Car, CarImage, CarColor, CarModel, FrequentQuestion, FrequesntAnswers
-
+from django.contrib.auth.models import User
+from .models import ContactModel
 
 class CarImageInlineModels(admin.TabularInline):
     model = CarImage
@@ -25,3 +26,4 @@ class AnsweredInlineModel(admin.ModelAdmin):
 admin.site.register(Car, CarInlineModel)
 admin.site.register(CarModel)
 admin.site.register(FrequentQuestion, AnsweredInlineModel)
+admin.site.register(ContactModel)
