@@ -7,7 +7,7 @@ from django.conf.urls.i18n import i18n_patterns
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path("", views.home),
+    path("", views.home, name="home"),
     path("contact", views.contact, name="contact"),
     path("team", views.our_team, name="team"),
     path("login", views.login, name="login"),

@@ -52,3 +52,12 @@ class FrequentQuestion(models.Model):
 class FrequesntAnswers(models.Model):
     QuestionId = models.ForeignKey(FrequentQuestion, on_delete=models.CASCADE)
     Answer = models.TextField()
+
+
+class ContactModel(models.Model):
+    name = models.CharField(max_length=20)
+    email = models.EmailField()
+    msg = models.TextField()
+
+    def __repr__(self):
+        return self.email
