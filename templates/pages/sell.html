@@ -1,0 +1,145 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    {% include 'includes/meta.html' %}
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/css/select2.min.css" rel="stylesheet" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/js/select2.min.js"></script>
+    <script>
+        $(document).ready(function() {
+          $('select').select2();
+        });
+      </script>
+</head>
+
+{% include 'includes/header.html' %}
+
+<div class="clearfix"></div>
+
+<!--message-wrap ends-->
+<section class="content" style="margin-top: 150px;;">
+
+    <div class="container">
+        <div class="inner-page homepage margin-bottom-none">
+            
+
+
+           
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 padding-bottom-40 scroll_effect fadeInUp"
+            data-wow-delay='.2s' style="z-index:100">
+           <h4 class="margin-bottom-25 margin-top-none"><strong>Sell  Vehicle</strong> </h4>
+           <div class="search-form margin-top-20 padding-vertical-20">
+               <form method="post" action="#">
+                   <div class="select-wrapper row clearfix">
+                      
+                   </div>
+                   <div class="select-wrapper row clearfix">
+                       <div class="col-md-6">
+                           <div class="my-dropdown make-dropdown">
+                               <select name="body_style" class="" tabindex="1">
+                                   <option value="">Model Year</option>
+                                   <option>2023</option>
+                                   <option>2022</option>
+                                   <option>2021</option>
+                                   <option>2020</option>
+                                   <option>2018</option>
+                                   <option>2017</option>
+                                   <option>2016</option>
+                                   <option>2015</option>
+                                   <option>2014</option>
+                                   <option>2013</option>
+                                   <option>2012</option>
+                               </select>
+                           </div>
+                       </div>
+
+                       <div class="col-md-6">
+                        <div class="my-dropdown make-dropdown">
+                            <select name="transmission" class="" tabindex="1">
+                                <option value="">Mileage</option>
+                                <option>20,000 km or less</option>
+                                <option>unknown/don't know</option>
+                            </select>
+                        </div>
+                    </div>
+                    
+                   </div>
+                   <div class="select-wrapper row clearfix">
+                       <div class="col-md-6">
+                           <div class="my-dropdown make-dropdown">
+                               <select name="model" class="" tabindex="1">
+                                   <option value="">Model</option>
+                                   <option>Lorem</option>
+                                   <option>ipsum</option>
+                                   <option>dolor</option>
+                                   <option>sit</option>
+                                   <option>amet</option>
+                               </select>
+                           </div>
+                       </div>
+                       
+                   </div>
+                   <div class="select-wrapper row clearfix">
+                       <div class="col-md-6">
+                           <div class="my-dropdown make-dropdown">
+                               <select name="make" class="" tabindex="1">
+                                   <option value="">Make/Vehicle name</option>
+                                   <option>Lorem</option>
+                                   <option>ipsum</option>
+                                   <option>dolor</option>
+                                   <option>sit</option>
+                                   <option>amet</option>
+                               </select>
+                           </div>
+                       </div>
+                       <div class="col-md-6">
+                           <div class="my-dropdown">
+                               <input class="full-width" type="textarea" value=""
+                                      placeholder="Refine with keywords / Description">
+                           </div>
+                       </div>
+                   </div>
+                   <!-- <div class="clear"></div>
+                   <div class="select-wrapper row clearfix">
+                       <div class="form-element clearfix">
+                           <input type="checkbox" id="check">
+                           <label for="check">Certified</label>
+                       </div>
+                       <div class="form-element">
+                           <input type="checkbox" id="check2">
+                           <label for="check2">CARFAX&reg; Verified</label>
+                       </div>
+                       <div class="form-element">
+                           <input type="checkbox" id="check3">
+                           <label for="check3">Brand New</label>
+                       </div>
+                       <div class="form-element">
+                           <input type="submit" value="Find Vehicle"
+                                  class="find_new_vehicle pull-right md-button">
+                       </div>
+                   </div> -->
+               </form>
+           </div>
+       </div>
+       <!--invetory ends-->
+
+        
+         
+
+
+        </div>
+    </div>
+</section>
+
+
+{% include 'includes/footer.html' %}
+
+</body>
+
+
+    
+    <body>
+</html>

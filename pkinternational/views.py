@@ -26,6 +26,8 @@ def register(request):
 def search(request):
     return render(request, "pages/search.html")
 
+def sell(request):
+    return render(request, "pages/sell.html")
 
 def translate(language):
     cur_language = get_language()
