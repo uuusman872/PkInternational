@@ -37,17 +37,25 @@
                       </button>
                       <div class="parent-div-logo">
                         <img width="60px" src="{% static 'images/2023/logo.png' %}" alt="">
-                        <a class="navbar-brand" href="index-2.html"><span class="logo"><span class="secondary_text">ピーケ インターナショナル</span><span class="primary_text">株式会社 PK INTERNATIONAL</span> </span></a> </div>
+                        <a class="navbar-brand" href="index-2.html"><span class="logo"><span class="secondary_text">ピ－ケ－インターナショナル</span><span class="primary_text">株式会社 PK INTERNATIONAL</span> </span></a> </div>
                     </div>
                     <!-- Collect the nav links, forms, and other content for toggling -->
                     <div class="desktop-menu-dropdown collapse navbar-collapse" id="navbar-collapse-desktop">
                         <ul class="nav navbar-nav pull-right">
-                            <li class="active"><a href="index-2.html">Home</a></li>
+                            <li class="active"><a href="{% url 'home'  %}">Home</a></li>
                             
                             <!-- if we need dropbox -->
-                            <!-- <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Inventory <b class="caret"></b></a>
+                            <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Services <b class="caret"></b></a>
                                 <ul class="dropdown-menu">
-                                    <li><a href="demo.html">Select View Demo</a></li>
+                                    <li><a href="{% url 'search'  %}">Buying</a></li>
+                                    <li><a href="{% url 'sell'  %}">Selling</a></li>
+                            
+                                   
+                                </ul>
+                            </li>
+                            <!-- <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Services <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="demo.html">Buying</a></li>
                                     <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Boxed Layout <b class="caret"></b></a>
                                         <ul class="dropdown-menu">
                                             <li><a href="inventory-boxed-fullwidth.html">Boxed Fullwidth</a></li>
@@ -72,11 +80,10 @@
                                     </li>
                                 </ul>
                             </li> -->
-                            <li><a href="service.html">Services</a></li>
-                            <li><a href="our-team.html">Our Team</a></li>
-
+                            <li><a href="{% url 'team'  %}">Our Team</a></li>
+                            <li><a href="{% url 'contact'  %}">Contact</a></li>
+                            <li><a href="{% url 'about'  %}">About</a></li>
                             
-                            <li><a href="contact.html">Contact</a></li>
                         </ul>
                     </div>
 
