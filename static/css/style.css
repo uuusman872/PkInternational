@@ -55,7 +55,7 @@ h6 {
 
 p {
 	margin: 0;
-	margin-bottom: 20px;
+	margin-bottom: 10px;
 	font-weight: 400;
 }
 
@@ -2422,7 +2422,7 @@ footer form input[type=text] {
 
 .footer-contact ul li i {
 	padding-right: 14px;
-	font-size: 15px;
+
 }
 
 .footer-contact ul li strong {
@@ -2924,7 +2924,7 @@ div.custom-select:last-child {
 }
 
 .parallax_parent.design_2 .parallax_scroll .row > div {
-	text-align: center;
+	text-align: left;
 	margin-bottom: 60px;
 	color: #2D2D2D;
 	padding-top: 60px;
@@ -7332,10 +7332,15 @@ section.content, .car-block-wrap, .welcome-wrap {
   .car-name {
 	position: absolute;
 	bottom: 10px;
-	left: 100px;
+	left: 20%;
 	font-size: 20px;
 	color: white;
 	text-shadow: 1px 1px black;
+	font-weight: 600;
+    margin: 20px 0 14px 0;
+    letter-spacing: -1px;
+
+    font-family: 'Open Sans', sans-serif, Arial;
   }
   
   @keyframes scaling {
@@ -7356,7 +7361,7 @@ section.content, .car-block-wrap, .welcome-wrap {
 	height: 100vh;
 	justify-content: center
   }
-  
+   
   .login-container {
 	background-color: white;
 	padding: 50px;
@@ -7469,4 +7474,21 @@ section.content, .car-block-wrap, .welcome-wrap {
 	top:0;
 	background-color: red;
 	height: 500px;
+  }
+
+  .hours-home{
+	text-align: left !important;
+    margin-left: 40px !important;
+  }
+  .qrnames{
+	text-align: center;
+    display: block;
+    font-size: 20px !important;
+  }
+  .inqury-text{
+	font-weight: 600;
+    margin: 20px 0 14px 0;
+    letter-spacing: -1px;
+    font-size: 29px;
+    font-family: 'Open Sans', sans-serif, Arial;
   }

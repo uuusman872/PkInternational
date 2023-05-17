@@ -4,7 +4,9 @@ from django.conf import settings
 from django.conf.urls.static import static
 from . import views
 from django.conf.urls.i18n import i18n_patterns
-
+admin.site.site_header = "株式会社 PK INTERNATIONAL Admin"
+admin.site.site_title = "株式会社 PK INTERNATIONAL Admin Portal"
+admin.site.index_title = "Welcome to 株式会社 PK INTERNATIONAL Portal"
 urlpatterns = [
     path('admin/', admin.site.urls),
     path("", views.home, name="home"),

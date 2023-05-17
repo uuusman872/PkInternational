@@ -4,7 +4,7 @@
         <div class="row">
             <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 padding-left-none md-padding-left-none sm-padding-left-15 xs-padding-left-15">
                 <h4> 株式会社PK INTERNATIONAL</h4>
-                <p>中古車・重機の買取、販売、貿易をしている会社です。
+                <p>中古車・重機の買取、販売、輸出､輸入をしている会社です。
                     中古車、事故車、車検切れ車、ダンプ、トラック、ショベル、ウィング、フォークリフト、タイヤショベル、ユンボ、発電機、溶接機、廃車、重機、建設機械、農業機械を高価買取致します。
                      愛車を売りになりたい時や欲しい車を買いたい時などお問い合わせ下さい。
                     
@@ -17,9 +17,9 @@
                 <div class="footer-contact">
                     <ul>
                         <li><i class="fa fa-map-marker"></i> <strong>ADDRESS:</strong> 〒584-0069 Osaka, Tondabayashi, Nishikiorihigashi, 2-chōme−10−5 グランドコーポ 錦303号室</li>
-                        <li><i class="fa fa-phone"></i> <strong>携帯</strong><a href="tel:+81-90-1900-5325">+81-90-1900-5325</a></li>
-                        <li><i class="fa fa-fax"></i> <strong>TEL:</strong><a href="tel:+81-721-26-7197">+81-721-26-7197</a></li>
-                        <li><i class="fa fa-phone"></i> <strong>FAX:</strong>+81-721-26-7297</li>
+                        <li><i class="fa fa-mobile fa-lg"></i> MOB:<strong></strong><a href="tel:+81-90-1900-5325">+81-90-1900-5325</a></li>
+                        <li><i class="fa fa-phone "  aria-hidden="true"></i><strong>Tel:</strong><a href="tel:+81-721-26-7197">+81-721-26-7197</a></li>
+                        <li><i class="fa fa-fax"></i> <strong>FAX:</strong><a href="+81-721-26-7297">+81-721-26-7297</a></li>
                         <li><i class="fa fa-envelope-o"></i> <strong>EMAIL:</strong><a href="mailto:pk.international.jp@gmail.com">pk.international.jp@gmail.com</a></li>
                         
                     </ul>
@@ -57,8 +57,12 @@
                     <li><a class="sc-10" href="#"></a></li>
                     <li><a class="sc-11" href="#"></a></li>
                     <li><a class="sc-12" href="#"></a></li> -->
+                    
                 </ul>
             </div>
+            <div id="clock">
+                <span style="font-size: 20px; font-weight: 900; padding-left: 15px;" id="date-time"> </span> <span> (Japan Standard Time)</span>
+              </div>
         </div>
     </div>
 </section>
@@ -75,4 +79,64 @@
 <script src="{% static 'js/jquery.selectbox-0.2.js' %}" type="text/javascript"></script>
 <script type="text/javascript" src="{% static 'js/jquery.mousewheel.js' %}"></script>
 <script type="text/javascript" src="{% static 'js/jquery.easing.js' %}"></script>
+<script>
+    var dt = new Date();
+    window.addEventListener("load", () => {
+  clock();
+  function clock() {
+    const today = new Date();
+
+    // get time components
+    const hours = today.getHours();
+    const minutes = today.getMinutes();
+    const seconds = today.getSeconds();
+
+    //add '0' to hour, minute & second when they are less 10
+    const hour = hours < 10 ? "0" + hours : hours;
+    const minute = minutes < 10 ? "0" + minutes : minutes;
+    const second = seconds < 10 ? "0" + seconds : seconds;
+
+    //make clock a 12-hour time clock
+    const hourTime = hour > 12 ? hour - 12 : hour;
+
+    // if (hour === 0) {
+    //   hour = 12;
+    // }
+    //assigning 'am' or 'pm' to indicate time of the day
+    const ampm = hour < 12 ? "AM" : "PM";
+
+    // get date components
+    const month = today.getMonth();
+    const year = today.getFullYear();
+    const day = today.getDate();
+
+    //declaring a list of all months in  a year
+    const monthList = [
+      "January",
+      "February",
+      "March",
+      "April",
+      "May",
+      "June",
+      "July",
+      "August",
+      "September",
+      "October",
+      "November",
+      "December"
+    ];
+
+    //get current date and time
+    const date = monthList[month] + " " + day + ", " + year;
+    const time = hourTime + ":" + minute + ":" + second + ampm;
+
+    //combine current date and time
+    const dateTime = date + " - " + time;
+
+    //print current date and time to the DOM
+    document.getElementById("date-time").innerHTML = dateTime;
+    setTimeout(clock, 1000);
+  }
+});
+    </script>
 

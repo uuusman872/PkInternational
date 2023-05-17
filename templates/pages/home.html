@@ -22,16 +22,23 @@
 <section class="section">
     <div class="card-container">
       <div class="card-cars sp-img-1">
+        <a href="{% url 'search'  %}">
         <img src="{% static 'images/2023/24185c2.webp' %}" alt="Car 1">
-        <span class="car-name">Rental Service</span>
+   
+        <span class="car-name ">To Buy a Vehicle</span>
+         </a>
       </div>
       <div class="card-cars ">
+        <a href="{% url 'sell'  %}">
         <img src="{% static 'images/2023/dd88cc1.webp' %}" alt="Car 2">
-        <span class="car-name">Buying/Selling</span>
+        <span class="car-name">To Sell a Vehicle</span>
+         </a>
       </div>
       <div class="card-cars sp-img-2">
+        <a href="{% url 'search'  %}"></a>
         <img src="{% static 'images/2023/0ea776e.webp' %}" alt="Car 3">
-        <span class="car-name">Listing</span>
+        <span class="car-name">Vehicles In Stock</span>
+        </a>
       </div>
     </div>
   </section>
@@ -42,11 +49,9 @@
 <section class="message-wrap">
     <div class="container">
         <div class="row">
-            <h2 class="col-lg-9 col-md-8 col-sm-12 col-xs-12">Discover a website for car dealers that converts visitors
-                to <span class="alternate-font">customers</span></h2>
-            <div class="col-lg-3 col-md-4 col-sm-12 col-xs-12"><a href="#"
-                                                                  class="default-btn pull-right action_button lg-button">Schedule
-                a Test Drive</a></div>
+            <h2 class="col-lg-9 col-md-8 col-sm-12 col-xs-12">If you have any inquiry about  <span class="alternate-font">Vehicles</span></h2>
+            <div class="col-lg-3 col-md-4 col-sm-12 col-xs-12"><a href="{% url 'contact'  %}"
+                                                                  class="default-btn pull-right action_button lg-button">Send inquiry</a></div>
         </div>
     </div>
     <div class="message-shadow"></div>
@@ -59,53 +64,59 @@
                 <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 margin-bottom-none">
                     <div class="flip margin-bottom-30">
                         <div class="card">
-                            <div class="face front"><img class="img-responsive" src="{% static 'images/car1.jpg'%}" alt=""></div>
+                            <div class="face front"><img class="img-responsive" src="{% static 'images/image6.png'%}" alt=""></div>
                             <div class="face back">
-                                <div class='hover_title'>Race Ready</div>
-                                <a href="#"><i class="fa fa-link button_icon"></i></a> <a
-                                    href="images/car1-lrg.jpg" class="fancybox"><i
-                                    class="fa fa-arrows-alt button_icon"></i></a></div>
+                                <div class='hover_title'>AUTO PARTS</div>
+                                </div>
                         </div>
                     </div>
-                    <h4><a href="#">FACTORY READY FOR TRACK DAY</a></h4>
-                    <p class="margin-bottom-none">Sea veniam lucilius neglegentur ad, an per sumo volum
-                        voluptatibus. Qui cu everti repudiare. Eam ut cibo nobis
-                        aperiam, elit qualisque at cum. Possit antiopam id est.
-                        Illud delicata ea mel, sed novum mucius id. Nullam qua.</p>
+                    <h4 class="inqury-text">  AUTO PARTS</h4>
+                    <p class="margin-bottom-none">PK INTERNATIONAL Co; Ltd. Is exporting High Quality Non-Genuine and Genuine automobile spare parts from Japan since long time. <br>
+                        <details>
+                        <summary>For more details</summary>
+                        <p>We deal in used cars, nose cuts, half cuts, engines, transmissions, tires, lights, brakes, suspensions, doors, bumpers, fenders, trucks, forklifts and construction machinery. <br>
+                            * Other than those above, we export a variety of vehicles and parts. (Wholesale only). <br></p>
+                        </details>
+                        
+                        <a href="{% url 'contact'  %}">For inquiry </a>
+                        </p>
                 </div>
                 <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 margin-bottom-none">
                     <div class="flip horizontal margin-bottom-30">
                         <div class="card">
-                            <div class="face front"><img class="img-responsive" src="{% static 'images/car2.jpg' %}" alt=""></div>
+                            <div class="face front"><img class="img-responsive" src="{% static 'images/image1.jpg' %}" alt=""></div>
                             <div class="face back">
-                                <div class='hover_title'>Family Oriented</div>
-                                <a href="inventory-listing.html"><i class="fa fa-link button_icon"></i></a> <a
-                                    href="images/car2-lrg.jpg" class="fancybox"><i
-                                    class="fa fa-arrows-alt button_icon"></i></a></div>
+                                <div class='hover_title'>USED ENGINES</div>
+                               </div>
                         </div>
                     </div>
-                    <h4><a href="#">A SPORT UTILITY FOR THE FAMILY</a></h4>
-                    <p class="margin-bottom-none">Cum ut tractatos imperdiet, no tamquam facilisi qui.
-                        Eum tibique consectetuer in, an legimus referrentur vis,
-                        vocent deseruisse ex mel. Sed te idque graecis. Vel ne
-                        libris dolores, in mel graece dolorum.</p>
+                    <h4 class="inqury-text">USED ENGINES</h4>
+                    <p class="margin-bottom-none">We export Various Kinds Of Used Engines to many countries around the world. We would be happy to assist you. <br>
+                        Feel free to contact us with your inquiry (wholesale only)
+                        <br>
+                        <a href="{% url 'contact'  %}">For inquiry </a>
+                        
+                    </p>
                 </div>
                 <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 margin-bottom-none">
                     <div class="flip margin-bottom-30">
                         <div class="card">
-                            <div class="face front"><img class="img-responsive" src="{% static 'images/car3.jpg' %}" alt=""></div>
+                            <div class="face front"><img class="img-responsive" src="{% static 'images/image2.jpg' %}" alt=""></div>
                             <div class="face back">
-                                <div class='hover_title'>World Class</div>
-                                <a href="inventory-listing.html"><i class="fa fa-link button_icon"></i></a> <a
-                                    href="images/car3-lrg.jpg" class="fancybox"><i
-                                    class="fa fa-arrows-alt button_icon"></i></a></div>
+                                <div class='hover_title'>USED CARS, TRUCKS & MACHINERY   </div>
+                              </div>
                         </div>
                     </div>
-                    <h4><a href="#">MAKE AN EXECUTIVE STATEMENT</a></h4>
-                    <p class="margin-bottom-none">Te inermis cotidieque cum, sed ea utroque atomorum
-                        sadipscing. Qui id oratio everti scaevola, vim ea augue
-                        ponderum vituperatoribus, quo adhuc abhorreant
-                        omittantur ad. No his fierent perpetua consequat, et nis.</p>
+                    <h4 class="inqury-text">USED CARS, TRUCKS & MACHINERY  </h4>
+                    <p class="margin-bottom-none">We export high-quality used cars, trucks & machinery directly from Japan. Our company is exporting used vehicles throughout the world.  <br>
+                        <details>
+                            <summary>For more details</summary>
+                            <p> So we can provide you with many high-quality Japanese used cars, trucks & machinery that have been maintained carefully in Japan.
+                                <br> When you are considering to import Japanese used cars, trucks & machinery please contact us. We will provide you high-quality Japanese used cars, trucks & machinery. <br></p>
+                            </details>
+                      
+                        <br>
+                        <a href="{% url 'contact'  %}">For inquiry </a></p>
                 </div>
             </section>
 
@@ -118,37 +129,50 @@
                             <div class="row">
                                 <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12 padding-left-none xs-margin-bottom-none xs-padding-top-30 scroll_effect bounceInLeft">
                                     <span class="align-center"><i class="fa fa-6x fa-bar-chart-o"></i></span>
-                                    <h3>Results Driven</h3>
-                                    <p>Sed ut perspiciatis unde om nis
-                                        natus error sit volup atem accusant
-                                        dolorem que laudantium. Totam
-                                        aperiam, eaque ipsa quae ai.</p>
+                                    <h3 class="align-center" >Results Driven</h3>
+                                    <p>Consistently maintaining high levels of productivity, stamina, effectiveness, 
+                                        <details>
+                                            <summary>For more details</summary>
+                                            <p> and determination, not giving up when completing a task, even in the face of adversity or resistance. <br/>
+                                                Taking action that leads to achieving our business goals.<br></p>
+                                            </details>
+                                            
+                                        </p>
                                 </div>
                                 <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12 xs-margin-bottom-none xs-padding-top-30 scroll_effect bounceInLeft"
                                      data-wow-delay=".2s"><span class="align-center"><i
                                         class="fa fa-6x fa-road"></i></span>
-                                    <h3>Proven Technology</h3>
-                                    <p>Sed ut perspiciatis unde om nis
-                                        natus error sit volup atem accusant
-                                        dolorem que laudantium. Totam
-                                        aperiam, eaque ipsa quae ai.</p>
+                                    <h3 class="align-center">Proven Technology</h3>
+                                    <p>Helping you to create smarter & safer automotive experiences.</p>
                                 </div>
                                 <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12 xs-margin-bottom-none xs-padding-top-30 scroll_effect bounceInRight"
                                      data-wow-delay=".2s"><span class="align-center"><i
                                         class="fa fa-6x fa-flag-checkered"></i></span>
-                                    <h3>Winning Culture</h3>
-                                    <p>Sed ut perspiciatis unde om nis
-                                        natus error sit volup atem accusant
-                                        dolorem que laudantium. Totam
-                                        aperiam, eaque ipsa quae ai.</p>
+                                    <h3 class="align-center">Winning Culture</h3>
+                                    <p>Helping you to create smarter & safer automotive experiences.
+                                        <details>
+                                            <summary>For more details</summary>
+                                            <p>  <ol style="padding-left: 10px;">
+                                                <li>Be transparent about how success is measured.</li>
+                                                <li>Give recognition publicly.</li>
+                                                <li>Cultivate and model emotional intelligence.</li>
+                                            </ol></p>
+                                            </details>
+                                      
+                                    </p>
                                 </div>
                                 <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12 xs-margin-bottom-none xs-padding-top-30 padding-right-none scroll_effect bounceInRight">
                                     <span class="align-center"><i class="fa fa-6x fa-dashboard"></i></span>
-                                    <h3>Top Performance</h3>
-                                    <p>Sed ut perspiciatis unde om nis
-                                        natus error sit volup atem accusant
-                                        dolorem que laudantium. Totam
-                                        aperiam, eaque ipsa quae ai.</p>
+                                    <h3 class="align-center">Top Performance</h3>
+                                    <p>High-performing team built on the foundation of clarity
+                                        <details>
+                                            <summary>For more details</summary>
+                                            <p>…Defined Roles and Responsibilities…Clear and Respectful Communication...Trust and respect...Continuous learning and improvement.<br></p>
+                                            </details>
+
+                                    </p>
+
+
                                 </div>
                             </div>
                         </div>
@@ -302,11 +326,9 @@
                 </div>
 
                 <!-- Footer Map -->
-                <div class='fullwidth_element_parent margin-top-30 padding-bottom-40'>
-                    <div class="mapouter"><div class="gmap_canvas"><iframe width="100%" height="600px" id="gmap_canvas" src="https://maps.google.com/maps?q=株式会社 PK INTERNATIONAL&t=&z=10&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe><a href="https://2yu.co">2yu</a><br><style>.mapouter{position:relative;text-align:right;height:390px;width:100%;}</style><a href="https://embedgooglemap.2yu.co"></a><style>.gmap_canvas {overflow:hidden;background:none!important;height:390px;width:100%;}</style></div></div>
-                </div>
+          
 
-               
+                <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d6881909.738524171!2d137.368602!3d32.624634!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6000d7fc813f004f%3A0x29bdde60409ccce0!2z5qCq5byP5Lya56S-IFBLIElOVEVSTkFUSU9OQUw!5e0!3m2!1sen!2sus!4v1684314405631!5m2!1sen!2sus" width="100%" height="450px" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
 
 
                 <div class="car-rate-block row clearfix margin-top-30 padding-bottom-40">
@@ -327,7 +349,7 @@
                             <div class="row">
                                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 xs-margin-bottom-40 sm-margin-bottom-40 md-margin-bottom-none scroll_effect bounceInUp"
                                      data-wow-delay=".4s">
-                                    <table style="text-align: center;" class="table table-bordered no-border font-13px margin-bottom-none">
+                                    <table class="hours-home table table-bordered no-border font-13px margin-bottom-none">
                                         <thead>
                                         <tr>
                                             <td colspan="2"><strong> 営業時間</strong></td>
@@ -407,7 +429,7 @@
                                     <i class="fa fa-car"></i>
 
                                     <span class="animate_number margin-vertical-15">
-                                        $<span class="number">3,000</span>
+                                        <span class="number">3,000</span>
                                     </span>
 
                                     Cars Bought
@@ -420,7 +442,7 @@
                                         <span class="number">3,600</span>
                                     </span>
 
-                                    Truck and Machinery 
+                                    Trucks and Machinery 
                                 </div>
 
                                 <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12 margin-vertical-60">

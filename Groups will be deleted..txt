@@ -1,0 +1,8 @@
+Groups will be deleted.
+admis/users those registed will be show here.
+You can add car models and other things will which will be added in backend.
+You will add cars here.
+
+So basically this is admin panel , we can show here all the data when backend is completed.
+We cant do soo much edits here because it is pre build , we can change only colors of text and background colors.
+When backend fully completed you will see all the things clearly here.
