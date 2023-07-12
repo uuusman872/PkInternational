@@ -1,3 +1,4 @@
+{% load i18n %}
 {% load static %}
 <!DOCTYPE html>
 <html lang="en">
@@ -30,32 +31,33 @@
                     <div class="recent-vehicles-wrap margin-top-30 sm-padding-left-none padding-bottom-40">
                         <div class="row">
                             <div class="col-lg-2 col-md-4 col-sm-4 col-xs-12 recent-vehicles padding-left-none">
-                                <h5 class="margin-top-none">Recent Vehicles</h5>
-                                <p>Browse through the vast
-                                    selection of vehicles that
-                                    have recently been added
-                                    to our inventory.</p>
+                                <h5 class="margin-top-none">{% trans "Recent Vehicles" %}</h5>
+                                <p>{% trans "Browse through the vast selection of vehicles that have recently been added to our inventory." %}</p>
                                 <div class="arrow3 clearfix margin-top-15 xs-margin-bottom-25" id="slideControls3"><span
                                         class="prev-btn"></span><span class="next-btn"></span></div>
                             </div>
                             <div class="col-lg-10 col-md-8 col-sm-8 padding-right-none xs-padding-left-none">
                                 <div class="carasouel-slider3">
-                                    <div class="slide">
-                                        <div class="angled_badge blue">
-                                            <span>405 HP</span>
-                                        </div>
-                                        <div class="car-block">
-                                            <div class="img-flex"><a href="inventory-listing.html"><span
-                                                    class="align-center"><i
-                                                    class="fa fa-3x fa-plus-square-o"></i></span></a> <img
-                                                    src="{% static 'images/c-car1.jpg' %}" alt="" class="img-responsive"></div>
-                                            <div class="car-block-bottom">
-                                                <h6><strong>2012 Porsche Cayenne GTS</strong></h6>
-                                                <h6>1 Owner, 26,273 miles</h6>
-                                                <h5>$ 102,995</h5>
+                                    {% if recent_cars_list %}
+                                        {% for each_car in recent_cars_list %}
+                                        <div class="slide">
+                                            <div class="angled_badge blue">
+                                                <span>{{ each_car.condition }}</span>
+                                            </div>
+                                            <div class="car-block">
+                                                <div class="img-flex"><a href="inventory-listing.html"><span
+                                                        class="align-center"><i
+                                                        class="fa fa-3x fa-plus-square-o"></i></span></a> <img
+                                                        src="{% static 'images/c-car1.jpg' %}" alt="" class="img-responsive"></div>
+                                                <div class="car-block-bottom">
+                                                    <h6><strong>{{each_car.Name}}</strong></h6>
+                                                    <h6>{{each_car.owner.count }}, {{each_car.Mileage}} miles</h6>
+                                                    <h5>{{ each_car.Price}}</h5>
+                                                </div>
                                             </div>
                                         </div>
-                                    </div>
+                                        {% endfor %}
+                                    {% else %}
                                     <div class="slide">
                                         <div class="angled_badge red">
                                             <span>Just Arrived</span>
@@ -165,6 +167,8 @@
                                         </div>
                                     </div>
                                 </div>
+                                    {% endif %}
+
                             </div>
                         </div>
                     </div>
@@ -177,45 +181,28 @@
            
                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 padding-bottom-40 scroll_effect fadeInUp"
                          data-wow-delay='.2s' style="z-index:100">
-                        <h4 class="margin-bottom-25 margin-top-none"><strong>Buy</strong> OUR Vehicle </h4>
+                        <h4 class="margin-bottom-25 margin-top-none"><strong>{% trans "Buy" %}</strong> {% trans "OUR Vehicle" %}</h4>
                         <div class="search-form margin-top-20 padding-vertical-20">
-                            <form method="post" action="#">
+                            <form method="post" action="{% url 'cars_list_view' %}">
+                                {% csrf_token %}
                                 <div class="select-wrapper row clearfix">
                                     <div class="col-md-6">
                                         <div class="min-price select-dropdown">
                                             <div class="my-dropdown min-price-dropdown min-dropdown">
                                                 <select name="min-year" class="css-dropdowns" tabindex="1">
                                                     <option value="">Min Year</option>
-                                                    <option>2021</option>
-                                                    <option>2020</option>
-                                                    <option>2019</option>
-                                                    <option>2018</option>
-                                                    <option>2017</option>
-                                                    <option>2016</option>
-                                                    <option>2015</option>
-                                                    <option>2014</option>
-                                                    <option>2013</option>
-                                                    <option>2012</option>
-                                                    <option>2011</option>
-                                                    <option>2010</option>
+                                                    {% for each_year in filters.year_list %}
+                                                        <option value="{{each_year.translations__Year}}">{{each_year.translations__Year}}</option>
+                                                    {% endfor %}
                                                 </select>
                                             </div>
                                             <span class="my-dropdown">to</span>
                                             <div class="my-dropdown max-price-dropdown min-dropdown">
                                                 <select name="max-year" class="css-dropdowns" tabindex="1">
                                                     <option value="">Max Year</option>
-                                                    <option>2021</option>
-                                                    <option>2020</option>
-                                                    <option>2019</option>
-                                                    <option>2018</option>
-                                                    <option>2017</option>
-                                                    <option>2016</option>
-                                                    <option>2015</option>
-                                                    <option>2014</option>
-                                                    <option>2013</option>
-                                                    <option>2012</option>
-                                                    <option>2011</option>
-                                                    <option>2010</option>
+                                                    {% for each_year in filters.year_list %}
+                                                        <option value="{{each_year.translations__Year}}">{{each_year.translations__Year}}</option>
+                                                    {% endfor %}
                                                 </select>
                                             </div>
                                         </div>
@@ -224,39 +211,19 @@
                                         <div class="min-price select-dropdown">
                                             <div class="my-dropdown min-price-dropdown min-dropdown">
                                                 <select name="min-price" class="css-dropdowns" tabindex="1">
-                                                    <option value="">Min Price</option>
-                                                    <option>0</option>
-                                                    <option>&lt; 10,000</option>
-                                                    <option>&lt; 20,000</option>
-                                                    <option>&lt; 30,000</option>
-                                                    <option>&lt; 40,000</option>
-                                                    <option>&lt; 50,000</option>
-                                                    <option>&lt; 60,000</option>
-                                                    <option>&lt; 70,000</option>
-                                                    <option>&lt; 80,000</option>
-                                                    <option>&lt; 90,000</option>
-                                                    <option>&lt; 100,000</option>
-                                                    <option>&lt; 120,000</option>
-                                                    <option>&lt; 150,000</option>
+                                                    <option value="">Max Price</option>
+                                                    {% for each_price in filters.price_list %}
+                                                        <option>{{ each_price.translations__Price }}</option>
+                                                    {% endfor %}
                                                 </select>
                                             </div>
                                             <span class="my-dropdown">to</span>
                                             <div class="my-dropdown max-price-dropdown min-dropdown">
                                                 <select name="max-price" class="css-dropdowns" tabindex="1">
                                                     <option value="">Max Price</option>
-                                                    <option>0</option>
-                                                    <option>&lt; 10,000</option>
-                                                    <option>&lt; 20,000</option>
-                                                    <option>&lt; 30,000</option>
-                                                    <option>&lt; 40,000</option>
-                                                    <option>&lt; 50,000</option>
-                                                    <option>&lt; 60,000</option>
-                                                    <option>&lt; 70,000</option>
-                                                    <option>&lt; 80,000</option>
-                                                    <option>&lt; 90,000</option>
-                                                    <option>&lt; 100,000</option>
-                                                    <option>&lt; 120,000</option>
-                                                    <option>&lt; 150,000</option>
+                                                    {% for each_price in filters.price_list %}
+                                                        <option>{{ each_price.translations__Price }}</option>
+                                                    {% endfor %}
                                                 </select>
                                             </div>
                                         </div>
@@ -267,17 +234,9 @@
                                         <div class="my-dropdown make-dropdown">
                                             <select name="body_style" class="css-dropdowns" tabindex="1">
                                                 <option value="">Body Style</option>
-                                                <option>Cargo</option>
-                                                <option>Compact</option>
-                                                <option>Convertible</option>
-                                                <option>Coupe</option>
-                                                <option>Hatchback</option>
-                                                <option>Minivan</option>
-                                                <option>Sedan</option>
-                                                <option>SUV</option>
-                                                <option>Truck</option>
-                                                <option>Van</option>
-                                                <option>Wagon</option>
+                                                {% for each_year in filters.body_type %}
+                                                        <option value="{{each_year.translations__body_type}}">{{each_year.translations__body_type}}</option>
+                                                {% endfor %}
                                             </select>
                                         </div>
                                     </div>
@@ -286,38 +245,18 @@
                                             <div class="my-dropdown min-price-dropdown min-dropdown">
                                                 <select name="min-mileage" class="css-dropdowns" tabindex="1">
                                                     <option value="">Min Mileage</option>
-                                                    <option>0</option>
-                                                    <option>&lt; 10,000</option>
-                                                    <option>&lt; 20,000</option>
-                                                    <option>&lt; 30,000</option>
-                                                    <option>&lt; 40,000</option>
-                                                    <option>&lt; 50,000</option>
-                                                    <option>&lt; 60,000</option>
-                                                    <option>&lt; 70,000</option>
-                                                    <option>&lt; 80,000</option>
-                                                    <option>&lt; 90,000</option>
-                                                    <option>&lt; 100,000</option>
-                                                    <option>&lt; 120,000</option>
-                                                    <option>&lt; 150,000</option>
+                                                    {% for each_price in filters.milage %}
+                                                        <option>{{ each_price.translations__Mileage }}</option>
+                                                    {% endfor %}
                                                 </select>
                                             </div>
                                             <span class="my-dropdown">to</span>
                                             <div class="my-dropdown max-price-dropdown min-dropdown">
                                                 <select name="max-mileage" class="css-dropdowns" tabindex="1">
                                                     <option value="">Max Mileage</option>
-                                                    <option>0</option>
-                                                    <option>&lt; 10,000</option>
-                                                    <option>&lt; 20,000</option>
-                                                    <option>&lt; 30,000</option>
-                                                    <option>&lt; 40,000</option>
-                                                    <option>&lt; 50,000</option>
-                                                    <option>&lt; 60,000</option>
-                                                    <option>&lt; 70,000</option>
-                                                    <option>&lt; 80,000</option>
-                                                    <option>&lt; 90,000</option>
-                                                    <option>&lt; 100,000</option>
-                                                    <option>&lt; 120,000</option>
-                                                    <option>&lt; 150,000</option>
+                                                    {% for each_price in filters.milage %}
+                                                        <option>{{ each_price.translations__Mileage }}</option>
+                                                    {% endfor %}
                                                 </select>
                                             </div>
                                         </div>
@@ -340,8 +279,9 @@
                                         <div class="my-dropdown make-dropdown">
                                             <select name="transmission" class="css-dropdowns" tabindex="1">
                                                 <option value="">Transmission</option>
-                                                <option>Automatic</option>
-                                                <option>Manual</option>
+                                                {% for each_price in filters.transmissions %}
+                                                        <option>{{ each_price.translations__transmission }}</option>
+                                                {% endfor %}
                                             </select>
                                         </div>
                                     </div>
@@ -381,7 +321,7 @@
                                         <label for="check3">Brand New</label>
                                     </div>
                                     <div class="form-element">
-                                        <input type="submit" value="Find Vehicle"
+                                        <input type="submit" value='{% trans "Find Vehicle" %}'
                                                class="find_new_vehicle pull-right md-button">
                                     </div>
                                 </div>

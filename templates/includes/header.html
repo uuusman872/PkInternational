@@ -1,4 +1,5 @@
 <!--Header Start-->
+{% load i18n %}
 {% load static %}
 <header  data-spy="affix" data-offset-top="1" class="clearfix">
     <section class="toolbar">
@@ -42,13 +43,13 @@
                     <!-- Collect the nav links, forms, and other content for toggling -->
                     <div class="desktop-menu-dropdown collapse navbar-collapse" id="navbar-collapse-desktop">
                         <ul class="nav navbar-nav pull-right">
-                            <li class="active"><a href="{% url 'home'  %}">Home</a></li>
+                            <li class="active"><a href="{% url 'home'  %}">{% trans "Home" %}</a></li>
                             
                             <!-- if we need dropbox -->
-                            <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Services <b class="caret"></b></a>
+                            <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">{% trans "Services" %}<b class="caret"></b></a>
                                 <ul class="dropdown-menu">
-                                    <li><a href="{% url 'search'  %}">Buying</a></li>
-                                    <li><a href="{% url 'sell'  %}">Selling</a></li>
+                                    <li><a href="{% url 'search'  %}">{% trans "Buying" %}</a></li>
+                                    <li><a href="{% url 'sell'  %}">{% trans "Selling" %}</a></li>
                             
                                    
                                 </ul>
@@ -80,16 +81,16 @@
                                     </li>
                                 </ul>
                             </li> -->
-                            <li><a href="{% url 'team'  %}">Our Team</a></li>
-                            <li><a href="{% url 'contact'  %}">Contact</a></li>
-                            <li><a href="{% url 'about'  %}">About</a></li>
+                            <li><a href="{% url 'team'  %}">{% trans "Our Team" %}</a></li>
+                            <li><a href="{% url 'contact'  %}">{% trans "Contact" %}</a></li>
+                            <li><a href="{% url 'about'  %}">{% trans "About" %}</a></li>
                             
                         </ul>
                     </div>
 
                     <div class="mobile-menu-dropdown collapse navbar-collapse" id="navbar-collapse-mobile">
                         <ul class="nav navbar-nav pull-right">
-                            <li class="active"><a href="index-2.html">Home</a></li>
+                            <li class="active"><a href="index-2.html">{% trans "Home" %}</a></li>
                            
                             <!-- <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Inventory <b class="caret"></b></a>
                                 <ul class="dropdown-menu">
@@ -118,9 +119,9 @@
                                     </li>
                                 </ul>
                             </li> -->
-                            <li><a href="service.html">Services</a></li>
-                            <li><a href="our-team.html">Our Team</a></li>
-                            <li><a href="contact.html">Contact</a></li>
+                            <li><a href="service.html">{% trans "Services" %}</a></li>
+                            <li><a href="our-team.html">{% trans "Our Team" %}</a></li>
+                            <li><a href="contact.html">{% trans "Contact" %}</a></li>
                         </ul>
                     </div>
                     <!-- /.navbar-collapse -->

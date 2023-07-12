@@ -13,6 +13,13 @@
           $('select').select2();
         });
       </script>
+
+    <style>
+        .selling_fields {
+            padding: 20px !important;
+        }
+    </style>
+
 </head>
 
 {% include 'includes/header.html' %}
@@ -127,16 +134,16 @@
                 <form method="POST" action="">
                     {% csrf_token %}
                     <fieldset id="contact_form">
-                        <input type="text" name="name" class="form-control margin-bottom-25" placeholder="Manufacture name  (Required)" />
-                        <input type="email" name="email" class="form-control margin-bottom-25" placeholder="car model name  (Required)" />
-                        <input type="text" name="name" class="form-control margin-bottom-25" placeholder="year style  (Required)" />
-                        <input type="email" name="email" class="form-control margin-bottom-25" placeholder="Walking distance (km)  " />
-                        <input type="text" name="name" class="form-control margin-bottom-25" placeholder="Asking price" />
+                        <input type="text" name="name" class="selling_fields form-control margin-bottom-25" placeholder="Manufacture name  (Required)" />
+                        <input type="email" name="email" class="selling_fields form-control margin-bottom-25" placeholder="car model name  (Required)" />
+                        <input type="text" name="name" class="selling_fields form-control margin-bottom-25" placeholder="year style  (Required)" />
+                        <input type="email" name="email" class="selling_fields form-control margin-bottom-25" placeholder="Walking distance (km)  " />
+                        <input type="text" name="name" class="selling_fields form-control margin-bottom-25" placeholder="Asking price" />
                       
                         <!-- <p  >Any Attached file *Interior and exterior, other points you want to appeal, etc. </p> -->
                         <input type="file"  name="car-file01" size="40" accept=".jpg,.jpeg,.png,.gif,.pdf,.doc,.docx,.ppt,.pptx,.odt,.avi,.ogg,.m4a,.mov,.mp3,.mp4,.mpg,.wav,.wmv" aria-invalid="false" />
 
-                        <textarea name="msg" class="form-control margin-bottom-25 contact_textarea" placeholder="Any Other Details" rows="7"></textarea>
+                        <textarea name="msg" class="selling_fields form-control margin-bottom-25 contact_textarea" placeholder="Any Other Details" rows="7"></textarea>
                       
                     </fieldset>
               
